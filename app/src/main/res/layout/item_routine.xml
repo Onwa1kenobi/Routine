@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    android:paddingVertical="@dimen/activity_half_margin">
+
+    <TextView
+        android:id="@+id/label_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/description_text_size"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toStartOf="@id/button_arrow"
+        android:textStyle="bold"
+        tools:text="Do Ten push ups" />
+
+    <TextView
+        android:id="@+id/label_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/button_arrow"
+        app:layout_constraintTop_toBottomOf="@id/label_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/medium_text_size"
+        tools:text="Do 5 inclined push ups, and 5 diamond push ups." />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/button_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="false"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/ic_arrow_forward" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ugochukwu.routine.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_addEditRoutine"
+            app:destination="@id/addEditRoutineFragment" />
+        <action
+            android:id="@+id/action_home_to_routineDetail"
+            app:destination="@id/routineDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditRoutineFragment"
+        android:name="com.ugochukwu.routine.AddEditRoutineFragment"
+        android:label="fragment_add_edit_routine"
+        tools:layout="@layout/fragment_add_edit_routine">
+        <argument
+            android:name="routine"
+            android:defaultValue="@null"
+            app:argType="com.ugochukwu.routine.data.model.Routine"
+            app:nullable="true" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/routineDetailFragment"
+        android:name="com.ugochukwu.routine.RoutineDetailFragment"
+        android:label="RoutineDetailFragment"
+        tools:layout="@layout/fragment_routine_detail">
+        <action
+            android:id="@+id/action_detail_to_addEditRoutine"
+            app:destination="@id/addEditRoutineFragment" />
+        <argument
+            android:name="routineId"
+            app:argType="integer" />
+    </dialog>
+</navigation>
